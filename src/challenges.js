@@ -32,18 +32,24 @@ function highestCount(array) {
   for (let index = 0; index < array.length; index += 1) {
     if (array[index] > highNumber) {
       highNumber = array[index];
-    } 
+    }
   }
   for (let index = 0; index < array.length; index += 1) {
-    if (array[index] == highNumber) {
+    if (array[index] === highNumber) {
       count += 1;
-    } 
+    }
   } return count;
 }
 
 // Desafio 7
-function catAndMouse() {
-  // seu código aqui
+function catAndMouse(mouse, cat1, cat2) {
+  if ((Math.abs(cat2 - mouse)) > (Math.abs(mouse - cat1))) {
+    return 'cat1';
+  } else if ((Math.abs(cat1 - mouse)) > (Math.abs(mouse - cat2))) {
+    return 'cat2';
+  } else if ((Math.abs(cat1 - mouse)) === (Math.abs(cat2 - mouse))) {
+    return 'os gatos trombam e o rato foge';
+  }
 }
 
 // Desafio 8
