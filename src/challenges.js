@@ -16,8 +16,8 @@ function splitSentence(string) {
 }
 
 // Desafio 4
-function concatName() {
-  // seu código aqui
+function concatName(array) {
+  return (array[array.length - 1] + ', ' + array[0])
 }
 
 // Desafio 5
@@ -92,7 +92,7 @@ function encode(array) {
     default:
       newArray += array[index]
     }
-  } return newArray; 
+  } return newArray;
 }
 
 function decode(array) {
@@ -115,7 +115,7 @@ function decode(array) {
       newArray += 'u';
       break;
     default:
-      newArray += array[index]
+      newArray += array[index];
     }
   } return newArray; 
 }
@@ -132,7 +132,7 @@ function techList(array, string) {
         tech: array[index],
         name: string,
       };
-      newArray.push(dados)
+      newArray.push(dados);
     }
   }
   return newArray;
