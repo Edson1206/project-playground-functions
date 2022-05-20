@@ -70,21 +70,63 @@ function fizzBuzz(array) {
 }
 
 // Desafio 9
-function encode(string) {
-  // seu código aqui  
+function encode(array) {
+  let newArray = '';
+  for (let index in array) {
+    switch (array[index]) {
+    case 'a':
+      newArray += 1;
+      break;
+    case 'e':
+      newArray += 2;
+      break;
+    case 'i':
+      newArray += 3;
+      break;
+    case 'o':
+      newArray += 4;
+      break;
+    case 'u':
+      newArray += 5;
+      break;
+    default:
+      newArray += array[index]
+    }
+  } return newArray; 
 }
-function decode(string) {
-  // seu código aqui
+
+function decode(array) {
+  let newArray = '';
+  for (let index in array) {
+    switch (array[index]) {
+    case '1':
+      newArray += 'a';
+      break;
+    case '2':
+      newArray += 'e';
+      break;
+    case '3':
+      newArray += 'i';
+      break;
+    case '4':
+      newArray += 'o';
+      break;
+    case '5':
+      newArray += 'u';
+      break;
+    default:
+      newArray += array[index]
+    }
+  } return newArray; 
 }
 
 // Desafio 10
 function techList(array, string) {
   array.sort();
-  let newArray = []  
+  let newArray = [];
   if (array.length === 0) {
-    newArray = "Vazio!";
+    newArray = 'Vazio!';
   } else {
-    let dados = {};
     for (let index in array) {
       dados = {
         tech: array[index],
