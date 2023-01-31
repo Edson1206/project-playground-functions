@@ -1,28 +1,36 @@
 // Desafio 11
-function generatePhoneNumber() {
-  // seu código aqui
+function generatePhoneNumber(array) {
+  if (array.length !== 11) return 'Array com tamanho incorreto.';
+
+  const invalidNumbers = array
+    .filter((num) => num < 0 || num > 9 || array
+      .filter((item) => item === num).length >= 3);
+  if (invalidNumbers.length > 0) {
+    return 'não é possível gerar um número de telefone com esses valores';
+  }
+
+  return `(${array.slice(0, 2).join('')}) ${array.slice(2, 7).join('')}-${array.slice(7).join('')}`;
 }
 
 // Desafio 12
 function triangleCheck(lineA, lineB, lineC) {
-  if (lineA < lineB + lineC && lineA > (Math.abs(lineB)) - (Math.abs(lineC))) {
+  if (lineA + lineB > lineC && lineB + lineC > lineA && lineA + lineC > lineB) {
     return true;
-  } else {
-    return false;
-  } if (lineB < lineA + lineC && lineB > (Math.abs(lineA)) - (Math.abs(lineC))) {
-    return true;
-  } else {
-    return false; 
-  } if (lineC < lineB + lineA && lineC > (Math.abs(lineB)) - (Math.abs(lineA))) {
-    return true;
-  } else {
-    return false;
   }
+  return false;
 }
 
 // Desafio 13
-function hydrate() {
-  // seu código aqui
+function hydrate(string) {
+  const numberDrinks = string.replace(/[^0-9]/g, '').split('');
+  let total = 0;
+
+  for (const drink of numberDrinks) {
+    const amount = parseInt(drink.split(' ')[0], 10);
+    total += amount;
+  }
+
+  return total === 1 ? `${total} copo de água` : `${total} copos de água`;
 }
 
 module.exports = {
